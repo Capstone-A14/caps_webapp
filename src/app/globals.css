@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -24,4 +26,155 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+@layer base {
+  /* TEXT */
+  p {
+    color: #0b1728;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  h1 {
+    color: #0b1728;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  h2 {
+    color: #0b1728;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  label {
+    color: #0b1728;
+    font-family: Poppins;
+    font-size: 9.96px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+
+  .breadcrumb-text {
+    color: #fbfbfb;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  /* COMPONENT DAFTAR PASIEN */
+  .lbl_nama {
+    color: #0b1728;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: capitalize;
+  }
+
+  .lbl_detail {
+    color: var(--Main-Color, #0b1728);
+    font-family: Poppins;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: capitalize;
+  }
+
+  /* DETAIL PASIEN */
+
+  /* CONTAINER */
+  .centered-items {
+    display: grid;
+    place-items: center;
+  }
+
+  .right-items {
+    display: grid;
+    place-items: end;
+  }
+
+  .left-items {
+    display: grid;
+    place-items: start;
+  }
+
+  .inside-container {
+    @apply mt-5 mx-5 flex-row gap-5 items-start;
+  }
+}
+
+@layer components {
+  /* BUTTON */
+  .btn_sidemenu {
+    @apply rounded-lg p-1 content-center items-center inline-flex min-w-full gap-2 font-normal;
+    color: #50abe4;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    line-height: normal;
+  }
+
+  .btn_sidemenu:hover {
+    @apply transition duration-500 rounded-lg p-1 bg-light_blue_25 content-center items-center inline-flex min-w-full gap-2;
+    color: #50abe4;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    line-height: normal;
+  }
+
+  /* STATUS PASIEN */
+  .stats_tp {
+    @apply bg-blue inline-flex justify-center items-center rounded-lg py-1 px-3;
+  }
+
+  /* INPUT */
+  input[type="text"] {
+    color: #50abe4;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    background-color: transparent;
+    width: 100%;
+  }
+
+  input[type="text"]::placeholder {
+    color: #50abe48f;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    background-color: transparent;
+    width: 100%;
+  }
+
+  input[type="text"]:focus {
+    color: #50abe4;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    background-color: transparent;
+    width: 100%;
+    border-width: 0;
+    outline: none;
+  }
 }
