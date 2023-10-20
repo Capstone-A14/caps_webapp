@@ -7,35 +7,36 @@ export default function DetailPasien() {
     mrno: "123827",
     date_registered: "09/01/2023",
     status: "Tanpa Pengawasan",
-    dokter: "Dr. Andre Wijaya",
-    ruang: "ICU",
-    nomor: "12A",
-    usia: "56",
+    doctor: "Dr. Andre Wijaya",
+    room: "ICU",
+    room_no: "12A",
+    age: "56",
+    blood_type: "A",
   };
 
   return (
-    <div className="m-3 flex-row gap-5 items-start">
+    <div className="inside-container">
       {/* Breadcrumbs */}
-      <div className="items-center">
+      <div>
         <nav className="flex" aria-label="Breadcrumb">
-          <ol className="rounded-lg shadow px-4 flex space-x-2">
+          <ol className="flex space-x-2">
             <li>
-              <a href="/DetailPasien" className="font-poppins text-white">
-                Pasien
+              <a href="/DetailPasien" className="breadcrumb-text">
+                Daftar Pasien
               </a>
             </li>
-            <li className="font-poppins"> - </li>
-            <li className="font-poppins text-white">{pasien.name}</li>
+            <li className="breadcrumb-text"> - </li>
+            <li className="breadcrumb-text">{pasien.name}</li>
           </ol>
         </nav>
       </div>
 
-      {/* detail */}
-      <div className="mt-5 mx-5 bg-white rounded-lg flex items-start">
+      {/* detail pasien */}
+      <div className="mt-5 bg-white rounded-lg flex items-start">
         {/* Sisi Kiri */}
         <div className="w-[25%] px-5 py-7 centered-items gap-5">
           <div className="centered-items gap-3">
-            <div className="rounded-full h-[70px] w-[70px] bg-orange centered-items">
+            <div className="rounded-full h-[70px] w-[70px] bg-blue centered-items">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="50"
@@ -50,35 +51,69 @@ export default function DetailPasien() {
               </svg>
             </div>
 
-            <div className="bg-orange w-max py-1 px-3 rounded-lg">
-              <h2 className="text-[12px] text-white"> {pasien.status} </h2>
+            <div className="stats_tp">
+              <h2 className="text-[12px] text-white font-semibold">
+                {" "}
+                {pasien.status}{" "}
+              </h2>
             </div>
           </div>
 
           <div className="centered-items">
             <h1 className="text-black text-[18px]"> {pasien.name} </h1>
-            <h2 className="text-black"> {pasien.dokter} </h2>
+            <h2 className="text-black"> {pasien.doctor} </h2>
           </div>
 
           <div className="gap-x-2 flex items-baseline">
-            <div class="min-w-[110px] px-2 right-items">
-              <h2 className="text-black">RUANG/NOMOR</h2>
+            <div className="min-w-[110px] px-2 right-items">
+              <label className="text-[12px]"> ruang/nomor </label>
               <h1 className="text-black text-[16px]">
-                {pasien.ruang}/{pasien.nomor}
+                {pasien.room}/{pasien.room_no}
               </h1>
             </div>
 
-            <div class="min-w-[110px] px-2 left-items">
-              <h2 className="text-black text-[12px]">NOMOR MR</h2>
+            <div className="min-w-[110px] px-2 left-items">
+              <label className="text-[12px]"> Nomor MR </label>
               <h1 className="text-black text-[16px]">{pasien.mrno}</h1>
             </div>
           </div>
         </div>
 
         {/* Sisi Kanan */}
-        <div className="w-[75%]">
-          <p> test </p>
+        <div className="w-[75%] py-6 px-5 left-items gap-5">
+          <div className="flex items-baseline gap-10">
+            <div className="left-items">
+              <label> Tanggal Masuk</label>
+              <label className="lbl_detail"> {pasien.date_registered}</label>
+            </div>
+
+            <div className="left-items">
+              <label> Jenis Kelamin</label>
+              <label className="lbl_detail"> {pasien.gender}</label>
+            </div>
+
+            <div className="left-items">
+              <label> Golongan Darah </label>
+              <label className="lbl_detail"> {pasien.blood_type}</label>
+            </div>
+
+            <div className="left-items">
+              <label> Usia </label>
+              <label className="lbl_detail"> {pasien.age}</label>
+            </div>
+          </div>
+
+          <div className="left-items">
+            <label> Diagnosis Dokter </label>
+            <p>Pasien memiliki tekanan darah sistolik rata-rata di atas 140 mmHg dan tekanan darah diastolik rata-rata di atas 90 mmHg selama tiga kali kunjungan berbeda. Diagnosis hipertensi dibuat setelah melakukan pemantauan tekanan darah yang berulang.</p>
+          </div>
         </div>
+      </div>
+
+      {/* EKG */}
+      <div className="mt-5 p-5 w-[45%] bg-white rounded-lg flex items-start">
+        <h1>Rekam EKG</h1>
+        {/* GRAFANA GOES HERE */}
       </div>
     </div>
   );

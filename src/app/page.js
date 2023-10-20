@@ -13,8 +13,8 @@ export default function Home() {
       </div>
       <div className="min-w-[80%]">
         <Header />
-        <DaftarPasien />
-        {/* <DetailPasien/> */}
+        {/* <DaftarPasien/> */}
+        <DetailPasien/>
       </div>
     </div>
   );

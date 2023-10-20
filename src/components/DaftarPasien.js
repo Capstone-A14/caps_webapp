@@ -15,9 +15,9 @@ export default function DaftarPasien() {
   };
 
   return (
-    <div className="mt-5 mx-5 flex-row gap-5 items-start">
+    <div className="inside-container">
       <div className="mb-2 flex items-baseline justify-between">
-        <h1 className="text-white text-[18px]">Daftar Pasien</h1>
+        <h1 className="breadcrumb-text">Daftar Pasien</h1>
         <button className="rounded-full bg-white px-3 flex items-baseline gap-x-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"

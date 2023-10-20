@@ -1,16 +1,16 @@
 import React from "react";
 
 export default function ComponentPasien() {
-  const pasien = {
+  const patient = {
     name: "Wiliam Putra",
     gender: "laki-laki",
     mrno: "123827",
     date_registered: "09/01/2023",
     status: "Tanpa Pengawasan",
-    dokter: "Dr. Andre Wijaya",
-    ruang: "ICU",
-    nomor: "12A",
-    usia: "56",
+    doctor: "Dr. Andre Wijaya",
+    room: "ICU",
+    room_no: "12A",
+    age: "56",
   };
 
   return (
@@ -32,7 +32,7 @@ export default function ComponentPasien() {
             </svg>
           </div>
           <div className="flex-col inline-flex items-start">
-            <label className="lbl_nama"> {pasien.name} </label>
+            <label className="lbl_nama"> {patient.name} </label>
             <div className="flex-row inline-flex items-baseline gap-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -43,48 +43,48 @@ export default function ComponentPasien() {
               >
                 <circle cx="2.74037" cy="2.14653" r="2.00404" fill="#1D3557" />
               </svg>
-              <label> {pasien.gender} </label>
+              <label> {patient.gender} </label>
             </div>
           </div>
         </div>
 
         <div className="w-[8%] flex-col inline-flex items-start">
           <label> MR.no </label>
-          <label className="lbl_detail"> {pasien.mrno} </label>
+          <label className="lbl_detail"> {patient.mrno} </label>
         </div>
 
         <div className="w-[15%] flex-col inline-flex items-start">
           <label> Tanggal Masuk </label>
-          <label className="lbl_detail"> {pasien.date_registered} </label>
+          <label className="lbl_detail"> {patient.date_registered} </label>
         </div>
 
         <div className="w-[18%] flex-col inline-flex items-start">
           <label> Status </label>
-          <div className="bg-blue inline-flex justify-center items-center rounded-lg py-1 px-2">
-            <label className="text-white font-semibold">{pasien.status}</label>
+          <div className="stats_tp">
+            <label className="text-white font-semibold">{patient.status}</label>
           </div>
         </div>
 
         <div className="w-[18%] flex-col inline-flex items-start">
           <label> Dokter </label>
-          <label className="lbl_detail"> {pasien.dokter} </label>
+          <label className="lbl_detail"> {patient.doctor} </label>
         </div>
 
         <div className="w-[14%] flex-col inline-flex items-start">
           <label> Ruang/Nomor </label>
           <label className="lbl_detail">
             {" "}
-            {pasien.ruang}/{pasien.nomor}{" "}
+            {patient.room}/{patient.room_no}{" "}
           </label>
         </div>
 
         <div className="w-[5%] flex-col inline-flex items-start">
           <label> Usia </label>
-          <label className="lbl_detail"> {pasien.usia} </label>
+          <label className="lbl_detail"> {patient.age} </label>
         </div>
 
         <button class="w-[15%] relative bg-blue overflow-hidden rounded-full py-1 px-4">
-          <h2 className="text-white">Detail Pasien</h2>
+          <h2 className="text-white">Detail pasien</h2>
         </button>
       </div>
     </div>
