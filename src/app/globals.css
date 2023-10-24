@@ -143,11 +143,11 @@ body {
   /* BUTTON */
   .btn_sidemenu {
     border-radius: 0.5rem;
-    padding: 0.25rem;
+    padding: 2%;
     align-content: center;
     align-items: center;
     display: inline-flex;
-    min-width: 100%;
+    width: 100%;
     gap: 0.5rem;
     color: #50abe4;
     font-family: Poppins;
@@ -157,12 +157,43 @@ body {
   }
 
   .btn_sidemenu:hover {
-    @apply transition duration-500 rounded-lg p-1 bg-light_blue_25 content-center items-center inline-flex min-w-full gap-2;
+    @apply transition duration-500 rounded-lg bg-light_blue_25 content-center items-center inline-flex min-w-full gap-2;
+    padding: 2%;
+    background-color: #dadde2;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    line-height: normal;
+  }
+
+  .btn_sidemenu-xsm {
+    border-radius: 0.5rem;
+    padding: 2%;
+    width: 100%;
+    gap: 0.5rem;
     color: #50abe4;
     font-family: Poppins;
     font-size: 14px;
     font-style: normal;
     line-height: normal;
+    display: grid;
+    place-items: center;
+    align-content: center;
+    align-items: center;
+  }
+
+  .btn_sidemenu-xsm:hover {
+    @apply transition duration-500 rounded-lg bg-light_blue_25 content-center items-center inline-flex min-w-full gap-2;
+    padding: 2%;
+    color: #50abe4;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    line-height: normal;
+    display: grid;
+    place-items: center;
+    align-content: center;
+    align-items: center;
   }
 
   .btn_detail {
@@ -187,37 +218,52 @@ body {
   }
 
   /* INPUT */
-  input[type="text"] {
-    color: #50abe4;
+  .input {
+    @apply transition;
+    border: 1px #c8c8c8 solid;
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+
+    color: #0B1728;
     font-family: Poppins;
-    font-size: 12px;
+    font-size: 14px;
     font-style: normal;
     font-weight: 500;
-    line-height: normal;
     background-color: transparent;
     width: 100%;
   }
 
-  input[type="text"]::placeholder {
-    color: #50abe48f;
-    font-family: Poppins;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    background-color: transparent;
-    width: 100%;
+  .input::placeholder {
+    color: #8c98a9;
   }
 
-  input[type="text"]:focus {
-    color: #50abe4;
+  .input:focus {
+    /* border-width: 0; */
+    outline: none;
+  }
+
+  .input:hover{
+    transition-duration: 200ms;
+    outline: none;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+
+  .input_search {
+    color: #1d3557;
     font-family: Poppins;
     font-size: 12px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
     background-color: transparent;
-    width: 100%;
+  }
+
+  .input_search::placeholder {
+    color: #8c98a9;
+  }
+
+  .input_search:focus {
+    color: #1d3557;
     border-width: 0;
     outline: none;
   }

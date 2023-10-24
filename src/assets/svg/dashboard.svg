@@ -1,20 +1,20 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
-  width="35"
-  height="35"
+  width="45"
+  height="45"
   viewBox="0 0 51 51"
   fill="none"
 >
   <path
     d="M17 22.5L26 15.5L35 22.5V33.5C35 34.0304 34.7893 34.5391 34.4142 34.9142C34.0391 35.2893 33.5304 35.5 33 35.5H19C18.4696 35.5 17.9609 35.2893 17.5858 34.9142C17.2107 34.5391 17 34.0304 17 33.5V22.5Z"
-    stroke="#50ABE4"
+    stroke="#1D3557"
     strokewidth="2"
     strokelinecap="round"
     strokelinejoin="round"
   />
   <path
     d="M23 35.5V25.5H29V35.5"
-    stroke="#50ABE4"
+    stroke="#1D3557"
     strokewidth="2"
     strokelinecap="round"
     strokelinejoin="round"

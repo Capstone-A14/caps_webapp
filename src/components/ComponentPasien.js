@@ -18,57 +18,53 @@ export default function ComponentPasien() {
   };
 
   return (
-    <div>
-      <div className="mt-2 bg-white p-3 w-[100%] rounded-lg inline-flex flex-row flex items-center">
-        <div className="w-[20%] gap-2 flex-row inline-flex items-start">
-          <div className="bg-blue p-1 rounded-full">
-            <Image src={Person} />
-          </div>
+    <div className="mt-2 bg-white p-3 w-[100%] rounded-lg inline-flex flex-row flex items-center">
+      <div className="w-[20%] gap-2 flex-row inline-flex items-start">
+        <Image className="w-[40px] bg-blue p-1 rounded-full" src={Person} />
 
-          <div className="flex-col inline-flex items-start">
-            <label className="lbl_nama"> {patient.name} </label>
-            <div className="flex-row inline-flex items-baseline gap-1">
-              <Image src={Circle} />
-              <label> {patient.gender} </label>
-            </div>
+        <div className="flex-col inline-flex items-start">
+          <label className="lbl_nama"> {patient.name} </label>
+          <div className="flex-row inline-flex items-baseline gap-1">
+            <Image src={Circle} />
+            <label> {patient.gender} </label>
           </div>
         </div>
-
-        <div className="w-[8%] flex-col inline-flex items-start">
-          <label> MR.no </label>
-          <label className="lbl_detail"> {patient.mrno} </label>
-        </div>
-
-        <div className="w-[15%] flex-col inline-flex items-start">
-          <label> Tanggal Masuk </label>
-          <label className="lbl_detail"> {patient.date_registered} </label>
-        </div>
-
-        <div className="w-[18%] flex-col inline-flex items-start">
-          <label> Status </label>
-          <div className="stats_tp text-[10px]"> {patient.status} </div>
-        </div>
-
-        <div className="w-[18%] flex-col inline-flex items-start">
-          <label> Dokter </label>
-          <label className="lbl_detail"> {patient.doctor} </label>
-        </div>
-
-        <div className="w-[14%] flex-col inline-flex items-start">
-          <label> Ruang/Nomor </label>
-          <label className="lbl_detail">
-            {" "}
-            {patient.room}/{patient.room_no}{" "}
-          </label>
-        </div>
-
-        <div className="w-[5%] flex-col inline-flex items-start">
-          <label> Usia </label>
-          <label className="lbl_detail"> {patient.age} </label>
-        </div>
-
-        <button className="btn_detail"> Detail pasien </button>
       </div>
+
+      <label className="w-[8%]">
+        MR.no <br />
+        <span className="lbl_detail"> {patient.mrno} </span>
+      </label>
+
+      <label className="w-[15%]">
+        Tanggal Masuk <br />
+        <span className="lbl_detail"> {patient.date_registered} </span>
+      </label>
+
+      <label className="w-[18%]">
+        Status <br />
+        <span className="stats_tp text-[10px]"> {patient.status}</span>
+      </label>
+
+      <label className="w-[18%]">
+        Dokter <br />
+        <span className="lbl_detail"> {patient.doctor} </span>
+      </label>
+
+      <label className="w-[14%]">
+        Ruang/Nomor <br />
+        <span className="lbl_detail">
+          {" "}
+          {patient.room}/{patient.room_no}
+        </span>
+      </label>
+
+      <label className="w-[5%]">
+        Usia <br />
+        <span className="lbl_detail"> {patient.age} </span>
+      </label>
+
+      <button className="btn_detail"> Detail pasien </button>
     </div>
   );
 }

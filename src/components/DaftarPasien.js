@@ -18,13 +18,13 @@ export default function DaftarPasien() {
 
   return (
     <div className="inside-container">
-      <div className="full-justified">
+      <header className="full-justified">
         <h1 className="breadcrumb-text">Daftar Pasien</h1>
         <button className="rounded-full bg-white px-4 py-1 flex items-baseline gap-x-2">
           <Image src= {Plus} />
           <h2 className="font-bold"> Tambah Pasien </h2>
         </button>
-      </div>
+      </header>
 
       <ComponentPasien />
     </div>

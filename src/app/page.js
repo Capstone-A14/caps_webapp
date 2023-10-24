@@ -10,10 +10,10 @@ import AddPatient from "@/components/modal/AddPatient";
 export default function Home() {
   return (
     <div className="min-h-screen min-w-full grow flex items-start bg-black">
-      <div className="w-[20%]">
-        <SideMenu />
+      <div className="xsm:w-[15%] md:w-[20%]">
+      <SideMenu />
       </div>
-      <div className="w-[80%]">
+      <div className="xsm:w-[85%] md:w-[80%]">
         <Header />
         {/* <DaftarPasien/> */}
         {/* <DetailPasien/> */}
