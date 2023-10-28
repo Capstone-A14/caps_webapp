@@ -1,9 +1,7 @@
 import React from "react";
 import Image from "next/legacy/image";
 import Link from "next/link";
-
-import Magnifyglass from "@/assets/svg/magnifyglass.svg";
-import Time from "@/assets/svg/time.svg";
+import { MagnifyGlass, Time } from "@svg/svgindex";
 
 export default function SideMenu() {
   const date = new Date();
@@ -24,7 +22,7 @@ export default function SideMenu() {
     <div className="full-justified flex flex-row mt-0 gap-[2%] bg-white px-5 py-3 ">
       {/* SEARCH BOX */}
       <div className="py-1 px-2 bg-dark_blue_25 rounded-lg flex basis-1/2 items-center">
-        <Image src={Magnifyglass} />
+        <Image src={MagnifyGlass} />
         <input className="input_search" type="text" placeholder="Cari..." />
       </div>
 

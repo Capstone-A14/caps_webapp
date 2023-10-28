@@ -1,22 +1,8 @@
 import React from "react";
 import Image from "next/image";
+import { Person } from "@svg/svgindex";
 
-import Person from "@/assets/svg/person.svg";
-
-export default function DetailPasien() {
-  const pasien = {
-    name: "Wiliam Putra",
-    gender: "laki-laki",
-    mrno: "123827",
-    date_registered: "09/01/2023",
-    status: "Tanpa Pengawasan",
-    doctor: "Dr. Andre Wijaya",
-    room: "ICU",
-    room_no: "12A",
-    age: "56",
-    blood_type: "A",
-  };
-
+export default function DetailPasien({patient}) {
   return (
     <div className="inside-container">
       {/* Breadcrumbs */}
@@ -28,25 +14,25 @@ export default function DetailPasien() {
             </a>
           </li>
           <li className="breadcrumb-text">/</li>
-          <li className="breadcrumb-text">{pasien.name}</li>
+          <li className="breadcrumb-text">{patient.name}</li>
         </ol>
       </nav>
 
       {/* Detail Pasien */}
-      <section className="container">
+      <section className="container flex xsm:flex-col md:flex-row">
         {/* Sisi Kiri */}
-        <div className="centered-items gap-5 w-[25%]">
+        <div className="centered-items gap-3">
           <div className="centered-items gap-3">
             <Image
               className="centered-items bg-blue rounded-full p-2 h-[70px] w-[70px]"
               src={Person}
             />
-            <div className="stats_tp"> {pasien.status} </div>
+            <div className="stats_tp"> {patient.status} </div>
           </div>
 
           <div className="centered-items">
-            <h1> {pasien.name} </h1>
-            <h2> {pasien.doctor} </h2>
+            <h1> {patient.name} </h1>
+            <h2> {patient.doctor} </h2>
           </div>
 
           <div className="gap-x-2 flex items-baseline">
@@ -54,38 +40,38 @@ export default function DetailPasien() {
               <label className="text-[12px]"> ruang/nomor </label>
               <h1>
                 {" "}
-                {pasien.room}/{pasien.room_no}{" "}
+                {patient.room}/{patient.room_no}{" "}
               </h1>
             </div>
 
             <div className="left-items px-2 min-w-[110px]">
               <label className="text-[12px]"> Nomor MR </label>
-              <h1> {pasien.mrno} </h1>
+              <h1> {patient.mrno} </h1>
             </div>
           </div>
         </div>
 
         {/* Sisi Kanan */}
-        <div className="left-items w-[75%] gap-5">
+        <div className="left-items md:basis-3/4">
           <section className="flex items-baseline gap-10">
             <label>
               Tanggal Masuk <br />
-              <span className="lbl_detail">{pasien.date_registered}</span>
+              <span className="lbl_detail">{patient.date_registered}</span>
             </label>
 
             <label>
               Jenis Kelamin <br />
-              <span className="lbl_detail">{pasien.gender}</span>
+              <span className="lbl_detail">{patient.gender}</span>
             </label>
 
             <label>
               Golongan Darah <br />
-              <span className="lbl_detail">{pasien.blood_type}</span>
+              <span className="lbl_detail">{patient.blood_type}</span>
             </label>
 
             <label>
               Usia <br />
-              <span className="lbl_detail">{pasien.age}</span>
+              <span className="lbl_detail">{patient.age}</span>
             </label>
           </section>
 

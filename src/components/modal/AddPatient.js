@@ -47,67 +47,6 @@ export default function AddPatient() {
           </button>
         </footer>
       </form>
-
-      {/* <div className="mt-6">
-        <form>
-          <div className="mb-6 grid gap-6 lg:grid-cols-2">
-            <div>
-              <label htmlFor="id" className="label">
-                NIP/NIU
-              </label>
-              <input
-                id="id"
-                name="nomor_identitas"
-                type="text"
-                className="transition-200 w-full rounded-lg border border-gray-300 bg-white p-2.5 text-sm text-black transition hover:outline-none hover:drop-shadow-lg"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="civitas" className="label">
-                Kelompok Civitas
-              </label>
-              <input
-                id="civitas"
-                name="civitas"
-                type="text"
-                className="transition-200 w-full rounded-lg border border-gray-300 bg-white p-2.5 text-sm text-black transition hover:outline-none hover:drop-shadow-lg focus:outline-none"
-                placeholder="Civitas"
-                readOnly
-              />
-            </div>
-
-            <div>
-              <label htmlFor="nokendaraan" className="label">
-                Nomor Kendaraan
-              </label>
-              <input
-                name="no_kendaraan"
-                id="nokendaraan"
-                type="text"
-                className="transition-200 w-full rounded-lg border border-gray-300 !bg-white p-2.5 text-sm text-black transition hover:outline-none hover:drop-shadow-lg focus:outline-none"
-                placeholder="AA 1234 BB"
-                required
-              />
-            </div>
-
-            <div>
-              <label htmlFor="kendaraan" className="label">
-                Jenis Kendaraan
-              </label>
-              <select
-                name="jenis_kendaraan"
-                id="kendaraan"
-                className="transition-200 w-full rounded-lg border border-gray-300 !bg-white p-2.5 text-sm text-black transition hover:outline-none hover:drop-shadow-lg focus:outline-none"
-                required
-              >
-                <option value="mobil">Mobil</option>
-                <option value="motor">Motor</option>
-              </select>
-            </div>
-          </div>
-        </form>
-      </div> */}
     </div>
   );
 }
