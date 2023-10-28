@@ -38,6 +38,7 @@ body {
     font-weight: 400;
     line-height: normal;
   }
+
   h1 {
     color: #0b1728;
     font-family: Poppins;
@@ -129,8 +130,8 @@ body {
     display: flex;
     align-items: flex-start;
   }
+
   .inside-container {
-    /* @apply flex-row gap-5 items-start; */
     margin-top: 1.25rem;
     margin-left: 1.25rem;
     margin-right: 1.25rem;
@@ -197,7 +198,7 @@ body {
   }
 
   .btn_detail {
-    @apply w-[15%] relative bg-blue overflow-hidden rounded-full py-1 px-4;
+    @apply relative bg-blue overflow-hidden rounded-full py-1 px-5;
     font-family: Poppins;
     font-size: 12px;
     font-weight: 600;
@@ -223,7 +224,6 @@ body {
     border: 1px #c8c8c8 solid;
     border-radius: 0.5rem;
     padding: 0.75rem;
-
     color: #0B1728;
     font-family: Poppins;
     font-size: 14px;
@@ -256,6 +256,8 @@ body {
     font-weight: 500;
     line-height: normal;
     background-color: transparent;
+    border-width: 0;
+    outline: none;
   }
 
   .input_search::placeholder {
@@ -264,7 +266,5 @@ body {
 
   .input_search:focus {
     color: #1d3557;
-    border-width: 0;
-    outline: none;
   }
 }
