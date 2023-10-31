@@ -6,7 +6,7 @@ export function CardAlat({patient, device}) {
   return (
     <div className="flex flex-col basis-1/3 bg-white rounded-lg p-4 gap-3">
       <header className="flex flex-inline items-center bg-light_blue_25 rounded-lg">
-        <Image src={Device} className="" />
+        <Image src={Device} className="" alt="" />
         <h1> {device.id} </h1>
       </header>
       <p> Terpasang pada pasien: {patient.name} </p>

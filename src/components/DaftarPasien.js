@@ -2,26 +2,15 @@ import React from "react";
 import Image from "next/image";
 import ComponentPasien from "@components/ComponentPasien";
 import { Plus } from "@svg/svgindex";
+import { data } from "@/app/(withmenu)/page";
 
 export default function DaftarPasien({patient}) {
-  // const patient = {
-  //   name: "Wiliam Putra",
-  //   gender: "laki-laki",
-  //   mrno: "123827",
-  //   date_registered: "09/01/2023",
-  //   status: "Tanpa Pengawasan",
-  //   doctor: "Dr. Andre Wijaya",
-  //   room: "ICU",
-  //   room_no: "12A",
-  //   age: "56",
-  // };
-
   return (
     <div className="inside-container">
       <header className="full-justified mb-3">
         <h1 className="breadcrumb-text">Daftar Pasien</h1>
         <button className="rounded-full bg-white px-4 py-1 flex items-baseline gap-x-2">
-          <Image src={Plus} />
+          <Image src={Plus} alt="" />
           <h2 className="font-bold"> Tambah Pasien </h2>
         </button>
       </header>

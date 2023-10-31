@@ -25,7 +25,7 @@ export default function DetailPasien({patient}) {
           <div className="centered-items gap-3">
             <Image
               className="centered-items bg-blue rounded-full p-2 h-[70px] w-[70px]"
-              src={Person}
+              src={Person} alt=""
             />
             <div className="stats_tp"> {patient.status} </div>
           </div>

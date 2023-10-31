@@ -132,12 +132,40 @@ body {
   }
 
   .inside-container {
-    margin-top: 1.25rem;
-    margin-left: 1.25rem;
-    margin-right: 1.25rem;
+    margin: 1.25rem;
     align-items: flex-start;
     gap: 1.25rem;
   }
+
+  /* CSS MAP */
+  .css_map {  display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: min-content auto;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "sideMenu headerHere"
+      "sideMenu contentsHere";
+  }
+  
+  .sideMenu { grid-area: sideMenu; }
+  .headerHere { grid-area: headerHere; }
+  .contentsHere { grid-area: contentsHere; }
+  
+  .xsm_css_map {  display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content 1fr min-content; 
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "xsm-header"
+      "xsm-contents"
+      "xsm-menu";
+  }
+  
+  .xsm-header { grid-area: xsm-header; }
+  .xsm-contents { grid-area: xsm-contents; }
+  .xsm-menu { grid-area: xsm-menu; }
 }
 
 @layer components {
@@ -159,12 +187,6 @@ body {
 
   .btn_sidemenu:hover {
     @apply transition duration-500 rounded-lg bg-light_blue_25 content-center items-center inline-flex min-w-full gap-2;
-    padding: 2%;
-    background-color: #dadde2;
-    font-family: Poppins;
-    font-size: 14px;
-    font-style: normal;
-    line-height: normal;
   }
 
   .btn_sidemenu-xsm {
@@ -184,17 +206,7 @@ body {
   }
 
   .btn_sidemenu-xsm:hover {
-    @apply transition duration-500 rounded-lg bg-light_blue_25 content-center items-center inline-flex min-w-full gap-2;
-    padding: 2%;
-    color: #50abe4;
-    font-family: Poppins;
-    font-size: 14px;
-    font-style: normal;
-    line-height: normal;
-    display: grid;
-    place-items: center;
-    align-content: center;
-    align-items: center;
+    @apply transition duration-500 rounded-lg bg-light_blue_25 min-w-full gap-2;
   }
 
   .btn_detail {
