@@ -10,7 +10,7 @@ export function CardAlat({patient, device}) {
         <h1> {device.id} </h1>
       </header>
       <p> Terpasang pada pasien: {patient.name} </p>
-      <button className="btn_detail rounded-lg w-full py-2">
+      <button className="text-[13px] font-semibold bg-blue overflow-hidden rounded-lg py-1 px-5 text-white">
         Detail Pasien
       </button>
     </div>

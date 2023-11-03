@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function AddPatient() {
+export default function AddPatient({ closeModal = () => {} }) {
   return (
     <div className="m-5 p-5 bg-white rounded-lg">
       <h1>Tambah Pasien</h1>
@@ -24,7 +24,7 @@ export default function AddPatient() {
 
           <div>
             <label> Jenis Kelamin </label>
-            <select type="text" className="input" required>
+            <select type="text" placeholder="Pilih Jenis Kelamin" required>
               <option value="perempuan">Perempuan</option>
               <option value="lakilaki">Laki-laki</option>
             </select>
@@ -34,14 +34,15 @@ export default function AddPatient() {
         <footer className="inline-flex min-w-full overflow-hidden md:flex md:items-baseline md:justify-end">
           <button
             type="submit"
-            className="transition-200 w-min rounded-lg border border-gray-800 bg-white px-5 py-2 text-sm font-bold text-gray-800 drop-shadow-lg transition hover:bg-gray-800 hover:text-white hover:drop-shadow-lg"
+            className="transition transition-200 w-min rounded-lg border border-gray-800 bg-white px-5 py-2 text-sm font-bold text-gray-800 drop-shadow-lg hover:bg-gray-800 hover:text-white hover:drop-shadow-lg"
           >
             Submit
           </button>
 
           <button
             type="cancel"
-            className="ml-2 min-w-0 px-5 py-2 text-sm font-bold text-gray-800"
+            className="ml-2 min-w-0 px-5 py-2 text-sm font-bold text-gray-800 rounded-lg transition transition-200 hover:bg-red hover:text-white hover:drop-shadow-lg"
+            onClick={closeModal}
           >
             Batal
           </button>

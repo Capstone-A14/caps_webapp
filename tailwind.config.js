@@ -34,12 +34,16 @@ module.exports = {
         pale_blue: "#F1FAEE",
         red: "#E63946",
         orange: "#F3BE00",
+        purple: "#6D28D9",
       },
 
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
       },
     },
+  },
+  variants: {
+    fill: ['hover', 'focus'], 
   },
   plugins: [],
   
