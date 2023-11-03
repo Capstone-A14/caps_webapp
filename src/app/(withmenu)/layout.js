@@ -1,18 +1,21 @@
-// import Sidebar from '@/app/(with-sidebar)/_sidebar'
-import { SideMenu, Header } from "@/components/index.js";
+import { SideMenu, Header } from "@components/index.js";
 
-export default function withSideMenu({ children }) {
+export const metadata = {
+  title: "Cardimetry.",
+};
+
+export default function withMenu({ children }) {
   return (
-    <div className="xsm_css_map md:css_map bg-white min-h-screen">
-      <div className="xsm:xsm-menu md:sideMenu">
+    <div className="css_map bg-white min-h-screen">
+      <div className="sideMenu z-30 sticky bottom-0">
         <SideMenu />
       </div>
 
-      <div className="xsm:xsm-header md:headerHere">
+      <div className="headerHere z-20 sticky top-0 right-0">
         <Header />
       </div>
 
-      <div className="xsm:xsm-contents md:contentsHere bg-black rounded-none md:rounded-tl-3xl">
+      <div className="contentsHere bg-black z-10 rounded-none md:rounded-tl-3xl">
         {children}
       </div>
     </div>

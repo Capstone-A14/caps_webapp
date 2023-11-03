@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function EditPatient() {
+export default function EditPatient({ closeModal = () => {} }) {
   return (
     <div className="m-5 p-5 bg-white rounded-lg">
       <h1>Edit Pasien</h1>
@@ -41,7 +41,8 @@ export default function EditPatient() {
 
           <button
             type="cancel"
-            className="ml-2 min-w-0 px-5 py-2 text-sm font-bold text-gray-800"
+            className="ml-2 min-w-0 px-5 py-2 text-sm font-bold text-gray-800 rounded-lg transition transition-200 hover:bg-red hover:text-white hover:drop-shadow-lg"
+            onClick={closeModal}
           >
             Batal
           </button>

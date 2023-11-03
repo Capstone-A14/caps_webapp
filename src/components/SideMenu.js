@@ -20,7 +20,7 @@ export default function SideMenu() {
   return (
     <div className="overflow-clip p-1 md:p-5 md:w-[20%] md:min-h-screen md:fixed bg-white rounded-t-lg md:rounded-t-none md:rounded-br-lg">
       <header className="hidden md:contents">
-        <div className="hidden md:contents md:left-items">
+        <div className="hidden md:contents">
           <div
             style={{
               position: "relative",
@@ -59,7 +59,7 @@ export default function SideMenu() {
         {menuItems.map((menuItem, index) => (
           <Link
             key={index}
-            className="xsm:btn_sidemenu-xsm md:btn_sidemenu whitespace-nowrap overflow-hidden overflow-ellipsis"
+            className="btn_sidemenu whitespace-nowrap overflow-hidden overflow-ellipsis"
             href={menuItem.url}
           >
             <Image src={menuItem.icon} alt="" />

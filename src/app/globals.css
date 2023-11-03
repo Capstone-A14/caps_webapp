@@ -4,34 +4,14 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: #fbfbfb;
 }
 
 @layer base {
-  /* TEXT */
   p {
-    color: #0b1728;
+    color: theme(colors.black);
     font-family: Poppins;
     font-size: 14px;
     font-style: normal;
@@ -40,7 +20,7 @@ body {
   }
 
   h1 {
-    color: #0b1728;
+    color: theme(colors.black);
     font-family: Poppins;
     font-size: 16px;
     font-style: normal;
@@ -49,7 +29,7 @@ body {
   }
 
   h2 {
-    color: #0b1728;
+    color: theme(colors.black);
     font-family: Poppins;
     font-size: 12px;
     font-style: normal;
@@ -58,7 +38,7 @@ body {
   }
 
   label {
-    color: #0b1728;
+    color: theme(colors.black);
     font-family: Poppins;
     font-size: 10px;
     font-style: normal;
@@ -67,8 +47,12 @@ body {
     text-transform: uppercase;
   }
 
+  button {
+    font-family: Poppins;
+  }
+
   .breadcrumb-text {
-    color: #fbfbfb;
+    color: theme(colors.white);
     font-family: Poppins;
     font-size: 16px;
     font-weight: 700;
@@ -76,7 +60,7 @@ body {
 
   /* COMPONENT DAFTAR PASIEN */
   .lbl_nama {
-    color: #0b1728;
+    color: theme(colors.black);
     font-family: Poppins;
     font-size: 14px;
     font-style: normal;
@@ -86,7 +70,7 @@ body {
   }
 
   .lbl_detail {
-    color: var(--Main-Color, #0b1728);
+    color: theme(colors.black);
     font-family: Poppins;
     font-size: 13px;
     font-style: normal;
@@ -94,8 +78,6 @@ body {
     line-height: normal;
     text-transform: capitalize;
   }
-
-  /* DETAIL PASIEN */
 
   /* ITEMS ALLIGNMENT */
   .full-justified {
@@ -106,31 +88,6 @@ body {
     margin-bottom: 0.25rem;
   }
 
-  .centered-items {
-    display: grid;
-    place-items: center;
-  }
-
-  .right-items {
-    display: grid;
-    place-items: end;
-  }
-
-  .left-items {
-    display: grid;
-    place-items: start;
-  }
-
-  /* CONTAINER */
-  .container {
-    margin-top: 1.25rem;
-    padding: 1.5rem;
-    background-color: #fbfbfb;
-    border-radius: 0.5rem;
-    display: flex;
-    align-items: flex-start;
-  }
-
   .inside-container {
     margin: 1.25rem;
     align-items: flex-start;
@@ -138,145 +95,105 @@ body {
   }
 
   /* CSS MAP */
-  .css_map {  display: grid;
-    grid-template-columns: 1fr 4fr;
-    grid-template-rows: min-content auto;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-      "sideMenu headerHere"
-      "sideMenu contentsHere";
+  @screen xsm {
+    .css_map {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: min-content 1fr min-content;
+      gap: 0px 0px;
+      grid-auto-flow: row;
+      grid-template-areas:
+        "headerHere"
+        "contentsHere"
+        "sideMenu";
+    }
+
+    .headerHere {
+      grid-area: headerHere;
+    }
+    .contentsHere {
+      grid-area: contentsHere;
+    }
+    .sideMenu {
+      grid-area: sideMenu;
+    }
   }
-  
-  .sideMenu { grid-area: sideMenu; }
-  .headerHere { grid-area: headerHere; }
-  .contentsHere { grid-area: contentsHere; }
-  
-  .xsm_css_map {  display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: min-content 1fr min-content; 
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-      "xsm-header"
-      "xsm-contents"
-      "xsm-menu";
+
+  @screen md {
+    .css_map {
+      display: grid;
+      grid-template-columns: 1fr 4fr;
+      grid-template-rows: min-content auto;
+      gap: 0px 0px;
+      grid-auto-flow: row;
+      grid-template-areas:
+        "sideMenu headerHere"
+        "sideMenu contentsHere";
+    }
+
+    .sideMenu {
+      grid-area: sideMenu;
+    }
+    .headerHere {
+      grid-area: headerHere;
+    }
+    .contentsHere {
+      grid-area: contentsHere;
+    }
   }
-  
-  .xsm-header { grid-area: xsm-header; }
-  .xsm-contents { grid-area: xsm-contents; }
-  .xsm-menu { grid-area: xsm-menu; }
 }
 
 @layer components {
   /* BUTTON */
   .btn_sidemenu {
-    border-radius: 0.5rem;
-    padding: 2%;
-    align-content: center;
-    align-items: center;
-    display: inline-flex;
-    width: 100%;
-    gap: 0.5rem;
-    color: #50abe4;
-    font-family: Poppins;
-    font-size: 14px;
-    font-style: normal;
-    line-height: normal;
-  }
+    @apply w-full gap-2 grid place-items-center content-center items-center p-[2%] rounded-lg;
 
-  .btn_sidemenu:hover {
-    @apply transition duration-500 rounded-lg bg-light_blue_25 content-center items-center inline-flex min-w-full gap-2;
-  }
+    @media (min-width: theme("screens.md")) {
+      @apply content-center items-center inline-flex;
+    }
 
-  .btn_sidemenu-xsm {
-    border-radius: 0.5rem;
-    padding: 2%;
-    width: 100%;
-    gap: 0.5rem;
-    color: #50abe4;
-    font-family: Poppins;
-    font-size: 14px;
-    font-style: normal;
-    line-height: normal;
-    display: grid;
-    place-items: center;
-    align-content: center;
-    align-items: center;
-  }
-
-  .btn_sidemenu-xsm:hover {
-    @apply transition duration-500 rounded-lg bg-light_blue_25 min-w-full gap-2;
-  }
-
-  .btn_detail {
-    @apply relative bg-blue overflow-hidden rounded-full py-1 px-5;
-    font-family: Poppins;
-    font-size: 12px;
-    font-weight: 600;
-    font-style: normal;
-    line-height: normal;
+    &:hover {
+      @apply transition duration-500 rounded-lg bg-light_blue_25;
+    }
   }
 
   /* STATUS PASIEN */
   .stats_tp {
-    @apply bg-blue inline-flex justify-center items-center rounded-lg py-1 px-3;
-    font-family: Poppins;
-    font-size: 12px;
-    color: #fbfbfb;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    text-transform: uppercase;
+    @apply rounded-lg py-1 px-3 font-semibold uppercase m-0.5;
   }
 
   /* INPUT */
-  .input {
-    @apply transition;
-    border: 1px #c8c8c8 solid;
-    border-radius: 0.5rem;
-    padding: 0.75rem;
-    color: #0B1728;
-    font-family: Poppins;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    background-color: transparent;
-    width: 100%;
-  }
-
-  .input::placeholder {
-    color: #8c98a9;
-  }
-
-  .input:focus {
-    /* border-width: 0; */
+  input {
+    @apply border text-dark_blue text-sm font-medium bg-transparent w-full p-3 rounded-lg;
+    font-family: "Poppins";
     outline: none;
-  }
 
-  .input:hover{
-    transition-duration: 200ms;
-    outline: none;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    &::placeholder {
+      color: #8c98a9;
+    }
+
+    &:hover {
+      @apply shadow-md duration-200;
+    }
   }
 
   .input_search {
-    color: #1d3557;
-    font-family: Poppins;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    background-color: transparent;
-    border-width: 0;
+    @apply text-xs border-0 p-1;
+
+    &:hover {
+      @apply shadow-none;
+    }
+  }
+
+  select {
+    @apply border text-dark_blue text-sm font-medium bg-transparent w-full p-3 rounded-lg;
+    appearance: none;
+    -webkit-appearance: none;
+    font-family: "Poppins";
     outline: none;
-  }
-
-  .input_search::placeholder {
-    color: #8c98a9;
-  }
-
-  .input_search:focus {
-    color: #1d3557;
+    
+    &:hover {
+      @apply shadow-md duration-200;
+    }
   }
 }

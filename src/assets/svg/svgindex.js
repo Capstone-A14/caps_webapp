@@ -7,6 +7,7 @@ import Person from "@svg/person.svg";
 import Plus from "@svg/plus.svg";
 import Time from "@svg/time.svg";
 import Caution from "@svg/caution.svg";
+import CirclePlus from "@svg/circleplus.svg";
 
 export {
     Circle,
@@ -18,4 +19,5 @@ export {
     Plus,
     Time,
     Caution,
+    CirclePlus,
 };

@@ -1,5 +1,5 @@
 "use client";
-import { Dashboard } from "@components/index";
+import { Dashboard, DetailPasien } from "@components/index";
 
 const patient = {
   name: "Wiliam Putra",
@@ -30,6 +30,7 @@ export default function Home() {
   return (
     <>
       <Dashboard {...data} />
+      {/* <DetailPasien {...data} /> */}
     </>
   );
 }
