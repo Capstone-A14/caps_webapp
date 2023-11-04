@@ -38,7 +38,8 @@ export default function ComponentPasien({ patient }) {
                 "rounded-full w-[40px] p-2 text-white" +
                 (patient.status === "Tanpa Pengawasan" ? " bg-blue" : "") +
                 (patient.status === "Dalam Pengawasan" ? " bg-orange" : "") +
-                (patient.status === "Ditemukan Kejanggalan" ? " bg-red" : "")
+                (patient.status === "Ditemukan Kejanggalan" ? " bg-red" : "") +
+                (patient.status !== "Tanpa Pengawasan" && patient.status !== "Dalam Pengawasan" && patient.status !== "Ditemukan Kejanggalan" ? " bg-black" : "")
               }
             />
             <div className="grid">
@@ -52,15 +53,12 @@ export default function ComponentPasien({ patient }) {
               "stats_tp text-white text-center text-[12px] min-w-min" +
               (patient.status === "Tanpa Pengawasan" ? " bg-blue" : "") +
               (patient.status === "Dalam Pengawasan" ? " bg-orange" : "") +
-              (patient.status === "Ditemukan Kejanggalan" ? " bg-red" : "")
+              (patient.status === "Ditemukan Kejanggalan" ? " bg-red" : "") +
+              (patient.status !== "Tanpa Pengawasan" && patient.status !== "Dalam Pengawasan" && patient.status !== "Ditemukan Kejanggalan" ? " bg-black" : "")
             }
           >
             {patient.status}
           </div>
-
-          {/* <div className="stats_tp text-white text-center text-[12px] min-w-min bg-blue">
-            {patient.status}
-          </div> */}
         </div>
 
         <div className="grid md:col-span-2 grid-cols-2 gap-2 p-2 md:grid-cols-3 lg:gap-3 lg:p-0 lg:col-span-3">

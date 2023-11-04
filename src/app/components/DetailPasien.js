@@ -86,7 +86,8 @@ export default function DetailPasien() {
                   "rounded-full w-[70px] p-2 text-white" +
                   (patient.status === "Tanpa Pengawasan" ? " bg-blue" : "") +
                   (patient.status === "Dalam Pengawasan" ? " bg-orange" : "") +
-                  (patient.status === "Ditemukan Kejanggalan" ? " bg-red" : "")
+                  (patient.status === "Ditemukan Kejanggalan" ? " bg-red" : "") +
+                  (patient.status !== "Tanpa Pengawasan" && patient.status !== "Dalam Pengawasan" && patient.status !== "Ditemukan Kejanggalan" ? " bg-black" : "")
                 }
               />
               <div
@@ -94,7 +95,8 @@ export default function DetailPasien() {
                   "stats_tp text-white text-center text-[12px]" +
                   (patient.status === "Tanpa Pengawasan" ? " bg-blue" : "") +
                   (patient.status === "Dalam Pengawasan" ? " bg-orange" : "") +
-                  (patient.status === "Ditemukan Kejanggalan" ? " bg-red" : "")
+                  (patient.status === "Ditemukan Kejanggalan" ? " bg-red" : "") +
+                  (patient.status !== "Tanpa Pengawasan" && patient.status !== "Dalam Pengawasan" && patient.status !== "Ditemukan Kejanggalan" ? " bg-black" : "")
                 }
               >
                 {patient.status}

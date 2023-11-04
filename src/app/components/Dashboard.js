@@ -70,10 +70,6 @@ export default function Dashboard({ patient, device }) {
             {device.map((device) => (
               <CardAlat key={device.id} device={device} />
             ))}
-            {/* <CardAlat patient={patient} device={device} />
-            <CardAlat patient={patient} device={device} />
-            <CardAlat patient={patient} device={device} />
-            <CardAlat patient={patient} device={device} /> */}
           </section>
         </div>
       </div>
