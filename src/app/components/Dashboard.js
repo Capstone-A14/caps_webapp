@@ -2,8 +2,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { CardAlat } from "@components/DaftarAlat";
-import { CirclePlus } from "@/assets/svg/svgindex";
-import { ComponentPasien, AddPatient } from "@/components/index.js";
+import { CirclePlus } from "@svg/svgindex.js";
+import { ComponentPasien, AddPatient } from "@components/index.js";
 import Modal from "@components/modal/layout.js";
 
 function ListPatient() {

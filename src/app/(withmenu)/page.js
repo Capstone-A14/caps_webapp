@@ -1,5 +1,5 @@
 "use client";
-import { Dashboard, DetailPasien } from "@components/index";
+import { Dashboard, DetailPasien } from "@components/index.js";
 
 const patient = {
   name: "Wiliam Putra",

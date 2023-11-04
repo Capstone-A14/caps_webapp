@@ -2,9 +2,9 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { People, Dashboard, Device } from "@/assets/svg/svgindex";
-import Logo from "@/assets/logo.png";
-import Logotext from "@/assets/logotext.png";
+import { People, Dashboard, Device } from "@svg/svgindex";
+import Logo from "@/app/assets/logo.png";
+import Logotext from "@/app/assets/logotext.png";
 
 export default function SideMenu() {
   const rumahsakit = {

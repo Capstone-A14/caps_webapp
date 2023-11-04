@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { ComponentPasien, AddPatient } from "@/components/index.js";
+import { ComponentPasien, AddPatient } from "@components/index.js";
 import { PlusIcon } from "@heroicons/react/24/outline";
 import Modal from "@components/modal/layout.js";
 

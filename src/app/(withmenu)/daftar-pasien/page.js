@@ -1,5 +1,5 @@
 import React from "react";
-import { DaftarPasien } from "@/components/index";
+import { DaftarPasien } from "@components/index.js";
 
 const patient = {
   name: "Wiliam Putra",

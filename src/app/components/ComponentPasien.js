@@ -21,7 +21,7 @@ export default function ComponentPasien({ patient }) {
       </Modal>
 
       <Modal isShow={showDeleteModal} closeModal={() => setShowDeleteModal(false)}>
-        <DeletePatient closeModal={() => setShowDeleteModal(false)} />
+        <DeletePatient patient={patient} closeModal={() => setShowDeleteModal(false)} />
       </Modal>
 
       <div className="bg-white w-full rounded-lg grid grid-cols-1 grid-rows-1 p-3 lg:p-2 lg:grid-cols-6 items-center lg:gap-x-3">
