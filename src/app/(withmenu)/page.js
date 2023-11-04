@@ -2,6 +2,7 @@
 import { Dashboard, DetailPasien } from "@components/index.js";
 
 const patient = {
+  id: 1,
   name: "Wiliam Putra",
   gender: "laki-laki",
   mrno: "123827",
@@ -10,7 +11,7 @@ const patient = {
   doctor: "Dr. Andre Wijaya",
   room: "ICU",
   room_no: "12A",
-  age: "56",
+  age: 56,
 };
 
 const device = {

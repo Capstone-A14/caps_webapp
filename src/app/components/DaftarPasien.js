@@ -21,14 +21,15 @@ export default function DaftarPasien({ patient }) {
               setShowAddModal(true);
             }}
           >
-            <PlusIcon className="w-4"/>
+            <PlusIcon className="w-4" />
             Tambah Pasien
           </button>
         </header>
 
         <section className="grid xsm:grid-row-1 gap-3">
-          <ComponentPasien patient={patient} />
-          <ComponentPasien patient={patient} />
+          {patient.map((patient) => (
+            <ComponentPasien key={patient.id} patient={patient} />
+          ))}
         </section>
       </div>
     </>

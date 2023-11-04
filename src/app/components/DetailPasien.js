@@ -1,10 +1,27 @@
 "use client";
 import React, { Fragment, useEffect, useRef, useState } from "react";
 import Modal from "@components/modal/layout.js";
-import { EditPatient, DeletePatient} from "@components/index.js";
-import { UserIcon, TrashIcon, PencilSquareIcon } from "@heroicons/react/24/outline";
+import { EditPatient, DeletePatient } from "@components/index.js";
+import {
+  UserIcon,
+  TrashIcon,
+  PencilSquareIcon,
+} from "@heroicons/react/24/outline";
 
-export default function DetailPasien({ patient }) {
+export default function DetailPasien() {
+  const patient = {
+    id: 1,
+    name: "Wiliam Putra",
+    gender: "Laki-laki",
+    mrno: "123827",
+    date_registered: "09/01/2023",
+    status: "Ditemukan Kejanggalan",
+    doctor: "Dr. Andre Wijaya",
+    room: "ICU",
+    room_no: "12A",
+    age: 56,
+  };
+
   const [showEditModal, setShowEditModal] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   return (
@@ -17,7 +34,10 @@ export default function DetailPasien({ patient }) {
         isShow={showDeleteModal}
         closeModal={() => setShowDeleteModal(false)}
       >
-        <DeletePatient closeModal={() => setShowDeleteModal(false)} />
+        <DeletePatient
+          patient={patient}
+          closeModal={() => setShowDeleteModal(false)}
+        />
       </Modal>
 
       <div className="inside-container max-h-min">
@@ -34,11 +54,21 @@ export default function DetailPasien({ patient }) {
           </ol>
 
           <div className="bg-white p-1 rounded-lg grid grid-cols-2 w-[200px]">
-            <button className="text-xs text-blue flex items-center rounded-lg hover:bg-blue/10" onClick={() => { setShowEditModal(true); }}>
+            <button
+              className="text-xs text-blue flex items-center rounded-lg hover:bg-blue/10"
+              onClick={() => {
+                setShowEditModal(true);
+              }}
+            >
               <PencilSquareIcon className="h-3 m-2 text-blue " />
               Edit
             </button>
-            <button className="text-xs text-red flex items-center rounded-lg hover:bg-red/10" onClick={() => { setShowDeleteModal(true); }}>
+            <button
+              className="text-xs text-red flex items-center rounded-lg hover:bg-red/10"
+              onClick={() => {
+                setShowDeleteModal(true);
+              }}
+            >
               <TrashIcon className="h-3 m-2 text-red" />
               Hapus
             </button>
@@ -51,10 +81,23 @@ export default function DetailPasien({ patient }) {
           {/* Profil */}
           <div className="grid grid-cols-2 gap-2 md:min-w-max">
             <div className="flex flex-col place-items-center items-center row-span-3 md:col-span-2 gap-3">
-              <UserIcon className="bg-blue rounded-full p-2 w-[70px] text-white" />
-              <div className="stats_tp bg-blue text-white text-center text-[12px]">
-                {" "}
-                {patient.status}{" "}
+              <UserIcon
+                className={
+                  "rounded-full w-[70px] p-2 text-white" +
+                  (patient.status === "Tanpa Pengawasan" ? " bg-blue" : "") +
+                  (patient.status === "Dalam Pengawasan" ? " bg-orange" : "") +
+                  (patient.status === "Ditemukan Kejanggalan" ? " bg-red" : "")
+                }
+              />
+              <div
+                className={
+                  "stats_tp text-white text-center text-[12px]" +
+                  (patient.status === "Tanpa Pengawasan" ? " bg-blue" : "") +
+                  (patient.status === "Dalam Pengawasan" ? " bg-orange" : "") +
+                  (patient.status === "Ditemukan Kejanggalan" ? " bg-red" : "")
+                }
+              >
+                {patient.status}
               </div>
             </div>
 

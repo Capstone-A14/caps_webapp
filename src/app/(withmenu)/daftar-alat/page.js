@@ -13,9 +13,16 @@ const patient = {
   age: "56",
 };
 
-const device = {
-  id: "Dev-01",
-};
+const device = [
+  {
+    id: "Dev-01",
+    name: "Testing",
+  },
+  {
+    id: "Dev-02",
+    name: "Testing Dev2",
+  },
+];
 
 const data = {
   patient: patient,

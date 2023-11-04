@@ -33,7 +33,9 @@ export default function Dashboard({ patient, device }) {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-2">
             <button
               className="bg-purple md:col-span-2 lg:col-span-1 rounded-lg text-center font-semibold text-white p-2"
-              onClick={() => { setShowAddModal(true); }}
+              onClick={() => {
+                setShowAddModal(true);
+              }}
             >
               <div className="flex justify-center items-center p-5 gap-2 rounded-lg bg-purple w-full h-full border-dashed border-2 border-purple transition hover:border-2 hover:border-dashed hover:border-white">
                 <Image src={CirclePlus} width={25} height={25} alt="" />
@@ -41,7 +43,7 @@ export default function Dashboard({ patient, device }) {
               </div>
             </button>
 
-            <div className="bg-dark_blue/25 border border-blue/25 rounded-lg p-4 transition duration-200 hover:bg-dark_blue">
+            <div className="bg-purple/20 border border-purple/25 rounded-lg p-4 transition duration-200 hover:bg-purple/50">
               <h1 className="text-white">Total Pasien</h1>
               <p className="text-white text-[40px] font-bold">34</p>
             </div>
@@ -56,24 +58,24 @@ export default function Dashboard({ patient, device }) {
         <div className="my-5">
           <h1 className="text-white text-[18px] my-2">Pasien</h1>
           <section className="grid gap-2">
-            <ComponentPasien patient={patient} />
-            <ComponentPasien patient={patient} />
+            {patient.map((patient) => (
+              <ComponentPasien key={patient.id} patient={patient} />
+            ))}
           </section>
         </div>
 
         <div className="my-5">
           <h1 className="text-white text-[18px] my-2">Alat</h1>
           <section className="grid xsm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+            {device.map((device) => (
+              <CardAlat key={device.id} device={device} />
+            ))}
+            {/* <CardAlat patient={patient} device={device} />
             <CardAlat patient={patient} device={device} />
             <CardAlat patient={patient} device={device} />
-            <CardAlat patient={patient} device={device} />
-            <CardAlat patient={patient} device={device} />
+            <CardAlat patient={patient} device={device} /> */}
           </section>
         </div>
-
-        {/* <AddPatient trigger = {modalOpen}/> */}
-
-        {/* {showAddModal && <AddPatient setOpenModal={setShowAddModal} />} */}
       </div>
     </>
   );
