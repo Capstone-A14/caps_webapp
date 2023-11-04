@@ -31,7 +31,7 @@ export default function ComponentPasien({ patient }) {
       </Modal>
 
       <div className="bg-white w-full rounded-lg grid grid-cols-1 p-3 lg:p-2 lg:grid-cols-7 items-center lg:gap-x-3">
-        <div className="gap-3 grid grid-cols-2 md:col-span-3 items-center">
+        <div className="grid grid-cols-2 md:col-span-3 gap-3 items-center">
           <div className="flex min-w-min items-start gap-2">
             <UserIcon
               className={
@@ -80,10 +80,10 @@ export default function ComponentPasien({ patient }) {
           </label>
         </div>
 
-        <div className="grid place-self-end lg:place-self-center w-[25%] lg:w-full">
+        <div className="grid md:col-span-2 lg:col-span-1 place-self-end lg:place-self-center w-[25%] lg:w-full">
           <Menu
             as="div"
-            className="w-full bg-blue/10 rounded-lg relative inline-block"
+            className="w-full bg-blue/20 rounded-lg relative inline-block"
           >
             <div>
               <Menu.Button className="text-blue text-[13px] text-semibold py-1 px-2 inline-flex w-full justify-between rounded-lg outline-none transition duration-200 hover:bg-white/20">
