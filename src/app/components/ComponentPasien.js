@@ -13,6 +13,12 @@ import { EditPatient, DeletePatient } from "@components/index.js";
 export default function ComponentPasien({ patient }) {
   const [showEditModal, setShowEditModal] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const statuses = ["Tanpa Pengawasan", "Dalam Pengawasan", "Ditemukan Kejanggalan", "Tanpa Pengawasan"];
+  patient.status = statuses[(Math.floor(Math.random() * statuses.length))];
+  patient.room = "NA";
+  patient.room_no = "NA";
+  patient.date_registered = "NA";
+  patient.doctor = "NA";
 
   return (
     <>
