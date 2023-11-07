@@ -23,7 +23,9 @@ export default function ComponentPasien({ patient }) {
   return (
     <>
       <Modal isShow={showEditModal} closeModal={() => setShowEditModal(false)}>
-        <EditPatient closeModal={() => setShowEditModal(false)} />
+        <EditPatient closeModal={() => setShowEditModal(false)}
+          patient={patient}
+        />
       </Modal>
 
       <Modal

@@ -5,7 +5,7 @@ import { PlusIcon } from "@heroicons/react/24/outline";
 import Modal from "@components/modal/layout.js";
 
 async function fetchPatients(){
-    const res = await fetch('http://localhost:8000/api/v1/patient')
+    const res = await fetch('http://192.168.1.78:8000/api/v1/patient')
     return res.json()
 }
 
