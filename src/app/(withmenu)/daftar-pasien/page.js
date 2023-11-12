@@ -59,7 +59,8 @@ const data = {
 export default function page() {
   return (
     <>
-      <DaftarPasien {...data} />
+      {/*<DaftarPasien {...data} />*/}
+      <DaftarPasien />
     </>
   );
 }

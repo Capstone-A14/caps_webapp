@@ -1,11 +1,19 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, use } from "react";
 import { ComponentPasien, AddPatient } from "@components/index.js";
 import { PlusIcon } from "@heroicons/react/24/outline";
 import Modal from "@components/modal/layout.js";
 
-export default function DaftarPasien({ patient }) {
+async function fetchPatients(){
+    const res = await fetch('http://192.168.1.78:8000/api/v1/patient')
+    return res.json()
+}
+
+const patientsPromise = fetchPatients()
+
+export default function DaftarPasien() {
   const [showAddModal, setShowAddModal] = useState(false);
+  const patients = use(patientsPromise).patients;
   return (
     <>
       <Modal isShow={showAddModal} closeModal={() => setShowAddModal(false)}>
@@ -27,7 +35,7 @@ export default function DaftarPasien({ patient }) {
         </header>
 
         <section className="grid xsm:grid-row-1 gap-3">
-          {patient.map((patient) => (
+          {patients.map((patient) => (
             <ComponentPasien key={patient.id} patient={patient} />
           ))}
         </section>
