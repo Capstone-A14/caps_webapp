@@ -10,7 +10,7 @@ module.exports = {
     screens: {
       xsm: "0px",
       sm: "640px",
-      md: "768px",
+      md: "767px",
       lg: "1024px",
       xl: "1280px",
     },
@@ -25,16 +25,18 @@ module.exports = {
       colors: {
         white: "#FBFBFB",
         black: "#0B1728",
-        dark_blue: "#1D3557",
+        dark_blue: "#102e4a",
         dark_blue_25: "#DADDE2",
-        blue: "#50ABE4",
+        // blue: "#50ABE4",
+        blue: "#4666FF",
         light_blue: "#A8DADC",
         light_blue_50: "rgba(168, 218, 220, 0.5)",
         light_blue_25: "rgba(168, 218, 220, 0.25)",
         pale_blue: "#F1FAEE",
         red: "#E63946",
         orange: "#F3BE00",
-        purple: "#6D28D9",
+        // purple: "#6F6AF8",
+        purple: "#4666FF",
       },
 
       fontFamily: {

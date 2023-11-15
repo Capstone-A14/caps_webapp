@@ -1,23 +1,11 @@
-import Circle from "@svg/circle.svg";
-import Dashboard from "@svg/dashboard.svg";
-import Device from "@svg/device.svg";
-import MagnifyGlass from "@svg/magnifyglass.svg";
-import People from "@svg/people.svg";
-import Person from "@svg/person.svg";
-import Plus from "@svg/plus.svg";
-import Time from "@svg/time.svg";
-import Caution from "@svg/caution.svg";
-import CirclePlus from "@svg/circleplus.svg";
+import Duduk from "@svg/duduk.svg";
+import Jalan from "@svg/jalan.svg";
+import Jatuh from "@svg/jatuh.svg";
+import Tidur from "@svg/tidur.svg";
+import Berdiri from "@svg/berdiri.svg";
+import ECG from "@svg/ecg.svg"
+import NoActivity from "@svg/noactivity.svg";
 
-export {
-    Circle,
-    Dashboard,
-    Device,
-    MagnifyGlass,
-    People,
-    Person,
-    Plus,
-    Time,
-    Caution,
-    CirclePlus,
-};
+// tidur, duduk, berdiri, jalan, jatuh
+
+export { Duduk, Jalan, Jatuh, Tidur, Berdiri, ECG, NoActivity};

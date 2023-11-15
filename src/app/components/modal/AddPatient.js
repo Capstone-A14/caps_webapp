@@ -34,14 +34,14 @@ export default function AddPatient({ closeModal = () => {} }) {
         <footer className="inline-flex min-w-full overflow-hidden md:flex md:items-baseline md:justify-end">
           <button
             type="submit"
-            className="transition transition-200 w-min rounded-lg border border-gray-800 bg-white px-5 py-2 text-sm font-bold text-gray-800 drop-shadow-lg hover:bg-gray-800 hover:text-white hover:drop-shadow-lg"
+            className="transition duration-200 w-min rounded-lg border border-black bg-white px-5 py-2 text-sm font-bold text-black hover:bg-black hover:text-white"
           >
             Submit
           </button>
 
           <button
             type="cancel"
-            className="ml-2 min-w-0 px-5 py-2 text-sm font-bold text-gray-800 rounded-lg transition transition-200 hover:bg-red hover:text-white hover:drop-shadow-lg"
+            className="ml-2 min-w-0 px-5 py-2 text-sm font-bold text-red rounded-lg transition transition-200 bg-red/10 hover:bg-red hover:text-white border border-red"
             onClick={closeModal}
           >
             Batal

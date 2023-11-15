@@ -1,0 +1,63 @@
+@screen xsm {
+  .pagination-container {
+    place-self: end;
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 2px;
+    font-family: Poppins;
+
+    .pagination-item {
+      @apply border border-purple;
+      width: 32px;
+      height: 32px;
+      display: grid;
+      align-items: center;
+      place-items: center;
+      place-self: center;
+      margin: auto 2px;
+      color: theme(colors.purple);
+      border-radius: 6px;
+      font-size: 12px;
+
+      &.selected {
+        @apply font-bold text-white bg-purple;
+      }
+
+      &.disabled {
+        pointer-events: none;
+        opacity: 0.3;
+      }
+    }
+
+    .arrow {
+      @apply border-0;
+    }
+  }
+}
+
+@screen md {
+  .pagination-container {
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+    .pagination-item {
+      @apply border-0;
+      color: theme(colors.dark_blue);
+
+      &.dots:hover {
+        background-color: transparent;
+        cursor: default;
+      }
+
+      &:hover {
+        @apply transition duration-200 bg-purple/10 border border-purple text-purple font-bold;
+        cursor: pointer;
+      }
+
+      &.disabled {
+        &:hover {
+          background-color: transparent;
+          cursor: default;
+        }
+      }
+    }
+  }
+}

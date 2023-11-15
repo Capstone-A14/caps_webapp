@@ -8,6 +8,8 @@ import AddPatient from "./modal/AddPatient";
 import EditPatient from "./modal/EditPatient";
 import Dashboard from "./Dashboard";
 import DeletePatient from "./modal/DeletePatient";
+import CardAlat from "./CardAlat";
+import ChartEcg from "./ChartECG";
 
 
 export {
@@ -21,4 +23,6 @@ export {
   EditPatient,
   Dashboard,
   DeletePatient,
+  CardAlat,
+  ChartEcg
 };
