@@ -107,23 +107,19 @@ export default function Header({ patient }) {
   const date = new Date();
   const [search, setSearch] = useState("");
   // const [patient, setPatient] = useState();
+  const [filteredData, setFilteredData] = useState();
 
-  // useEffect(() => {
-  //   fetch(`${process.env.PATIENT_API}/api/v1/patient`)
-  //     .then((res) => res.json())
-  //     .then((patient) => setPatient(patient))
-  //     .catch((error) => console.error("Error fetching patient data:", error));
-  // }, []);
-
-  const filteredData = useEffect(() => {
-    // fetch(`${process.env.PATIENT_API}/api/v1/patient`)
-    //   .then((res) => res.json())
-    //   .then((patient) => setPatient(patient))
-    //   .catch((error) => console.error("Error fetching patient data:", error));
-      
+  // useEffect(()=>{
+  //   fetch(`/api/v1/patient`)
+  //   .then((res) => res.json())
+  //   .then((patient) => setPatient(patient))
+  //   .catch((error) => console.error("Error fetching patient data:", error));
+  // },[])
+  
+  useEffect(() => { 
     const lowerCaseSearch = search.toLowerCase();
 
-    return patient.filter((patient) => {
+    const dataFiltered = patient?.filter((patient) => {
       const matchesName =
         patient.name && patient.name.toLowerCase().includes(lowerCaseSearch);
 
@@ -133,22 +129,14 @@ export default function Header({ patient }) {
 
       return matchesName || matchesDeviceId || lowerCaseSearch === "";
     });
+
+    setFilteredData(dataFiltered)
   }, [search, patient]);
 
-  // const filteredData = useMemo(() => {
-  //   const lowerCaseSearch = search.toLowerCase();
 
-  //   return patient.filter((patient) => {
-  //     const matchesName =
-  //       patient.name && patient.name.toLowerCase().includes(lowerCaseSearch);
-
-  //     const matchesDeviceId =
-  //       typeof patient.device_id === "number" &&
-  //       patient.device_id.toString().includes(lowerCaseSearch);
-
-  //     return matchesName || matchesDeviceId || lowerCaseSearch === "";
-  //   });
-  // }, [search, patient]);
+  useEffect(()=>{
+    console.log(filteredData)
+  },[filteredData])
 
   const options = {
     weekday: "long",

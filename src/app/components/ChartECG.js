@@ -1,9 +1,10 @@
 "use client";
 import React, { useEffect, useState } from "react";
-// import data from "@/app/ECG.json";
+import data from "@/app/ECG.json";
 import * as d3 from "d3";
 
-export default function ChartEcg({ecgData}) {
+// export default function ChartEcg({ecgData}) {
+export default function ChartEcg() {
 
   // DATA
   const [lead1, setLead1] = useState(null);

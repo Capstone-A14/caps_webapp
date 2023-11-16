@@ -16,7 +16,7 @@ export default function DaftarAlat({ patient }) {
   const filteredData = useMemo(() => {
     const lowerCaseSearch = search.toLowerCase();
 
-    return patient.filter((patient) => {
+    return patient?.filter((patient) => {
       const matchesName =
         patient.name && patient.name.toLowerCase().includes(lowerCaseSearch);
       const matchesDeviceId =

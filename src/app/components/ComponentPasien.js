@@ -35,14 +35,9 @@ export default function ComponentPasien({ patient }) {
   return (
     <>
       <Modal isShow={showEditModal} closeModal={() => setShowEditModal(false)}>
-<<<<<<< Updated upstream
-        <EditPatient closeModal={() => setShowEditModal(false)}
-          patient={patient}
-=======
         <EditPatient
           patient={patient}
           closeModal={() => setShowEditModal(false)}
->>>>>>> Stashed changes
         />
       </Modal>
 

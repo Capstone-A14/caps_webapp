@@ -5,18 +5,7 @@ import { PlusIcon, MagnifyingGlassIcon, FaceFrownIcon } from "@heroicons/react/2
 import Modal from "@components/modal/layout.js";
 import Pagination from "@components/Pagination";
 
-<<<<<<< Updated upstream
-async function fetchPatients(){
-    const res = await fetch('http://192.168.1.78:8000/api/v1/patient')
-    return res.json()
-}
-
-const patientsPromise = fetchPatients()
-
-export default function DaftarPasien() {
-=======
 export default function DaftarPasien({ patient }) {
->>>>>>> Stashed changes
   const [showAddModal, setShowAddModal] = useState(false);
   const [afDetectedFilter, setAfDetectedFilter] = useState(null);
   const [search, setSearch] = useState("");
@@ -28,7 +17,7 @@ export default function DaftarPasien({ patient }) {
   const filteredData = useMemo(() => {
     const lowerCaseSearch = search.toLowerCase();
 
-    return patient.filter((patient) => {
+    return patient?.filter((patient) => {
       const matchesName =
         patient.name && patient.name.toLowerCase().includes(lowerCaseSearch);
       const matchesActivity =
@@ -183,8 +172,7 @@ export default function DaftarPasien({ patient }) {
 
           <div className="col-span-3 grid gap-1">
             {currentTableData.length > 0 ? (
-              currentTableData
-                .filter((patient) => {
+              currentTableData?.filter((patient) => {
                   const lowerCaseSearch = search.toLowerCase();
                   return (
                     Object.values(patient).some((value) => {

@@ -32,7 +32,7 @@ export default function Dashboard({ patient }) {
 
   useEffect(() => {
     if (patient && patient.length) {
-      const patientsWithAF = patient.filter(
+      const patientsWithAF = patient?.filter(
         (patient) => patient.af_detected === 1
       );
       setTotalAF(patientsWithAF.length);
@@ -103,8 +103,7 @@ export default function Dashboard({ patient }) {
           </div>
 
           <div className="grid gap-2">
-            {patient
-              .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
+            {patient?.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
               .slice(0, 5)
               .map((patient) => (
                 <ComponentPasien key={patient.patient_id} patient={patient} />
@@ -124,8 +123,7 @@ export default function Dashboard({ patient }) {
             </Link>
           </div>
           <section className="grid xsm:grid-cols-2 md:grid-cols-3 gap-3">
-            {patient
-              .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
+            {patient?.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
               .slice(0, 6)
               .map((patient) => (
                 <CardAlat key={patient.patient_id} patient={patient} />
