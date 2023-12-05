@@ -1,14 +1,15 @@
+import Header from "./Header";
+import SideMenu from "./SideMenu";
+import Dashboard from "./Dashboard";
 import ComponentPasien from "./ComponentPasien";
 import DaftarAlat from "./DaftarAlat";
 import DaftarPasien from "./DaftarPasien";
 import DetailPasien from "./DetailPasien";
-import Header from "./Header";
-import SideMenu from "./SideMenu";
+import ChartEcg from "./ChartECG";
 import AddPatient from "./modal/AddPatient";
 import EditPatient from "./modal/EditPatient";
-import Dashboard from "./Dashboard";
 import DeletePatient from "./modal/DeletePatient";
-
+import CardAlat from "./CardAlat";
 
 export {
   ComponentPasien,
@@ -21,4 +22,6 @@ export {
   EditPatient,
   Dashboard,
   DeletePatient,
+  ChartEcg,
+  CardAlat,
 };

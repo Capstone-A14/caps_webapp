@@ -20,7 +20,7 @@ body {
   }
 
   h1 {
-    color: theme(colors.black);
+    color: theme(colors.dark_blue);
     font-family: Poppins;
     font-size: 16px;
     font-style: normal;
@@ -29,7 +29,7 @@ body {
   }
 
   h2 {
-    color: theme(colors.black);
+    color: theme(colors.dark_blue);
     font-family: Poppins;
     font-size: 12px;
     font-style: normal;
@@ -43,55 +43,13 @@ body {
     font-size: 10px;
     font-style: normal;
     font-weight: 500;
+
     line-height: normal;
     text-transform: uppercase;
   }
 
   button {
     font-family: Poppins;
-  }
-
-  .breadcrumb-text {
-    color: theme(colors.white);
-    font-family: Poppins;
-    font-size: 16px;
-    font-weight: 700;
-  }
-
-  /* COMPONENT DAFTAR PASIEN */
-  .lbl_nama {
-    color: theme(colors.black);
-    font-family: Poppins;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    text-transform: capitalize;
-  }
-
-  .lbl_detail {
-    color: theme(colors.black);
-    font-family: Poppins;
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-transform: capitalize;
-  }
-
-  /* ITEMS ALLIGNMENT */
-  .full-justified {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    margin-top: 0.25rem;
-    margin-bottom: 0.25rem;
-  }
-
-  .inside-container {
-    margin: 1.25rem;
-    align-items: flex-start;
-    gap: 1.25rem;
   }
 
   /* CSS MAP */
@@ -122,8 +80,8 @@ body {
   @screen md {
     .css_map {
       display: grid;
-      grid-template-columns: 1fr 4fr;
-      grid-template-rows: min-content auto;
+      grid-template-columns: 18% 1fr;
+      grid-template-rows: min-content 1fr;
       gap: 0px 0px;
       grid-auto-flow: row;
       grid-template-areas:
@@ -146,20 +104,16 @@ body {
 @layer components {
   /* BUTTON */
   .btn_sidemenu {
-    @apply w-full gap-2 grid place-items-center content-center items-center p-[2%] rounded-lg;
+    @apply text-[10px] w-full gap-2 grid place-items-center content-center items-center py-1 rounded-lg text-dark_blue;
+    font-family: "Poppins";
 
     @media (min-width: theme("screens.md")) {
-      @apply content-center items-center inline-flex;
+      @apply content-center items-center inline-flex text-sm py-4 px-2;
     }
 
     &:hover {
-      @apply transition duration-500 rounded-lg bg-light_blue_25;
+      @apply transition duration-200 rounded-lg bg-purple text-white;
     }
-  }
-
-  /* STATUS PASIEN */
-  .stats_tp {
-    @apply rounded-lg py-1 px-3 font-semibold uppercase m-0.5;
   }
 
   /* INPUT */
@@ -177,21 +131,13 @@ body {
     }
   }
 
-  .input_search {
-    @apply text-xs border-0 p-1;
-
-    &:hover {
-      @apply shadow-none;
-    }
-  }
-
   select {
     @apply border text-dark_blue text-sm font-medium bg-transparent w-full p-3 rounded-lg;
     appearance: none;
     -webkit-appearance: none;
     font-family: "Poppins";
     outline: none;
-    
+
     &:hover {
       @apply shadow-md duration-200;
     }

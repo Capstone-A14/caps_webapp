@@ -1,32 +1,69 @@
-import React from "react";
+"use client"
+import React, { useState } from "react";
+import { patient_api } from "@/app/fetch/fetchPatients";
 
 export default function AddPatient({ closeModal = () => {} }) {
+  const [name, setName] = useState("");
+  const [dob, setDob] = useState();
+  const [gender, setGender] = useState();
+
+  const addTodo = () => {
+    fetch(patient_api, {
+      method: "POST",
+      body: JSON.stringify({
+        name,
+        dob,
+        gender,
+      }),
+      headers: {
+        "content-type" : "application/json",
+      },
+    }).catch((e) => console.log(e));
+  }
+
   return (
     <div className="m-5 p-5 bg-white rounded-lg">
       <h1>Tambah Pasien</h1>
 
-      <form className="mt-2 flex flex-col gap-4">
+      <form className="mt-2 flex flex-col gap-4" onSubmit={(e)=>{
+        addTodo();
+        closeModal();
+      }}>
         <div>
           <label> Nama </label>
           <input
             type="text"
             className="input"
+            name="name"
+            value={name}
             placeholder="Masukkan nama pasien"
-            required
+            onChange={(e) => setName(e.target.value)}
           />
         </div>
 
         <div className="grid gap-6 lg:grid-cols-2">
           <div>
-            <label> Usia </label>
-            <input type="integer" className="input" placeholder="34" required />
+          <label> Tanggal Lahir </label>
+            <input
+              type="datetime-local"
+              className="input"
+              name="dob"
+              value={dob}
+              onChange={(e) => setDob(e.target.value)}
+            />
           </div>
 
           <div>
             <label> Jenis Kelamin </label>
-            <select type="text" placeholder="Pilih Jenis Kelamin" required>
-              <option value="perempuan">Perempuan</option>
-              <option value="lakilaki">Laki-laki</option>
+            <select
+              type="text"
+              className="input"
+              name="gender"
+              value={gender}
+              onChange={(e) => setGender(e.target.value)}
+            >
+              <option value="female">Perempuan</option>
+              <option value="male">Laki-laki</option>
             </select>
           </div>
         </div>

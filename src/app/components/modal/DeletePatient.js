@@ -1,7 +1,27 @@
 import React from "react";
 import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
+import { fetchPatients, patient_api } from "@/app/fetch/fetchPatients";
 
 export default function DeletePatient({ patient, closeModal = () => {} }) {
+  const deleteTodo = () => {
+    try {
+      fetch(patient_api + patient.patient_id, {
+        method: "DELETE",
+        headers: {
+          "content-type": "application/json",
+        },
+      })
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      return res;
+    }
+  };
+
+  const handleDelete = () => {
+    deleteTodo();
+    closeModal();
+  };
+
   return (
     <div className="bg-white rounded-lg m-5 p-5 gap-1 flex flex-col max-w-[500px] place-self-center">
       <div className="flex items-center gap-2 bg-red/10 border-red border-1 rounded-lg px-4 py-2">
@@ -9,10 +29,12 @@ export default function DeletePatient({ patient, closeModal = () => {} }) {
         <h1 className="text-red">HATI-HATI!</h1>
       </div>
 
-      <p className="my-5">
-        Anda akan menghapus pasien dengan nama{" "}
-        <span className="bg-red/10 px-2 py-1 rounded-lg font-bold text-red">"{patient.name}".</span> Yakin ingin menghapus pasien ini?
-      </p>
+        <p className="my-5">
+          Anda akan menghapus pasien dengan nama{" "}
+          <span className="bg-red/10 px-2 py-1 rounded-lg font-bold text-red"> {patient.name}
+          </span>{" "}
+          Yakin ingin menghapus pasien ini?
+        </p>
 
       <div className="flex flex-inline gap-2 justify-end">
         <button className="transition duration-200 border border-red bg-red/10 text-red hover:bg-red rounded-lg px-4 py-2 text-[14px] font-['Poppins'] font-bold hover:text-white"
